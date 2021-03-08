@@ -112,14 +112,14 @@ This is not a concern if you use @@ without -f and let afl-fuzz come up with the
 
 也许值得注意的是，以下一切都是允许的:
 
-* **与其他可扩展覆盖范围的引导工具一起运行afl-fuzz（例如，通过concilolic执行）。 第三方工具只需要遵循上述协议，即可从out_dir / <fuzzer_id> / queue / *中提取新的测试用例，并将自己的发现写入到out_dir / <ext_tool_id> / queue / *中顺序编号的id：nnnnnn文件中**。
+* **与其他可导工具一起运行afl-fuzz（例如，通过concilolic执行）。 第三方工具只需要遵循上述协议，即可从out_dir / <fuzzer_id> / queue / *中提取新的测试用例，并将自己的发现写入到out_dir / <ext_tool_id> / queue / *中顺序编号的id：nnnnnn文件中**。
 
 * **使用不同的（但相关的）目标二进制文件运行一些同步的模糊器**。 例如，在共享发现的测试用例的同时，对几个不同的JPEG解析器（例如IJG jpeg和libjpeg-turbo）进行压力测试可以产生协同作用，并提高总体覆盖率。
 
   （在这种情况下，每个二进制文件运行一个-M实例是一个不错的计划。）
 
 * 让某些个模糊测试器以不同的方式调用二进制文件。例如，“ djpeg”支持多种DCT模式，可通过命令行标志进行配置，而“ dwebp”则支持增量解码和单次解码。 在某些情况下，采用多种不同的模式然后合并测试用例将提高覆盖率。
-    
+  
 * 更令人信服的是，使用不同的起始测试用例（e.g., progressive and standard JPEG）或字典来运行同步模糊器。同步机制可确保测试集随时间推移变得相当均匀，但会引入一些初始可变性。
 
 [<font color=blue>译者注：Asymmetric setups很好</font>]
