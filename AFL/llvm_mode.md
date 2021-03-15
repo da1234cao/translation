@@ -35,7 +35,7 @@ Fast LLVM-based instrumentation for afl-fuzz
 
 ...然后在编译功能并稍后构建软件包时，将压缩包中的bin/目录放在$PATH的开头。 您不需要为此root。
 
-要构建工具本身，请键入“ make”。 这将在父目录中生成称为afl-clang-fast和afl-clang-fast ++的二进制文件。 完成此操作后，您可以采用类似于AFL的标准操作模式的方式来检测第三方代码，例如：
+**要构建工具本身，请键入“ make”。 这将在父目录中生成称为afl-clang-fast和afl-clang-fast ++的二进制文件**。 完成此操作后，您可以采用类似于AFL的标准操作模式的方式来检测第三方代码，例如：
 
 ```shell
 # Be sure to also include CXX set to afl-clang-fast++ for C++ code.
